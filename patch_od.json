@@ -1,0 +1,67 @@
+{"syscall_1": {"sha256": "697c649f766e33c2ae92784fb4a614400bba9c9919c87b55b417fb2954f53195", "syscall": "execve(\"./patch\", [\"./patch\"], MEMORY_ADDR /* 35 vars */)"}}
+{"syscall_2": {"sha256": "195284f654b3eba92e87e938f0ea0f33075b7b7e5dc71121de0d94339ced797f", "syscall": "brk(NULL)"}}
+{"syscall_3": {"sha256": "fe7f4fd7ef77b2af0bf0fa3102c3fd902acbfc4172143b0c620fd15546272507", "syscall": "arch_prctl(MEMORY_ADDR /* ARCH_??? */, MEMORY_ADDR)"}}
+{"syscall_4": {"sha256": "0a08fc40311afb6bdee78227daed77ff0b0046e0a959a40ac9e89c8d4bc3cdc3", "syscall": "access(\"/etc/ld.so.preload\", R_OK)"}}
+{"syscall_5": {"sha256": "a5cfacbbbdeed5c4a7e58ee6ff955d8d7da3e4876ea8c42725db70b1616d487e", "syscall": "openat(AT_FDCWD, \"/etc/ld.so.cache\", O_RDONLY|O_CLOEXEC)"}}
+{"syscall_6": {"sha256": "791796c15d110455a060113caf89ecd530136b41317d0b084cd1d844a5367634", "syscall": "fstat(3, {st_mode=S_IFREG|0644, st_size=93042, ...})"}}
+{"syscall_7": {"sha256": "000dd9455c34191f1251132a733256b2b4051b5300fe2ef0dc5405987a6f9ab8", "syscall": "mmap(NULL, 93042, PROT_READ, MAP_PRIVATE, 3, 0)"}}
+{"syscall_8": {"sha256": "ccabc907837c88bd2c3c0cfbb9f0d4277a6dbbfc95b518491f476ba74dbfa856", "syscall": "close(3)"}}
+{"syscall_9": {"sha256": "1971a5bda0bf4abf54ae21bfae41e605c9ff1ec20a7300ff50fe2947500f957a", "syscall": "openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libstdc++.so.6\", O_RDONLY|O_CLOEXEC)"}}
+{"syscall_10": {"sha256": "f85fd44749d5b00717eee810ea4d3ebf44b78f0c56f068440dbc0995badfc4ad", "syscall": "read(3, \"\\177ELF\\2\\1\\1\\3\\0\\0\\0\\0\\0\\0\\0\\0\\3\\0>\\0\\1\\0\\0\\0`\\341\\t\\0\\0\\0\\0\\0\"..., 832)"}}
+{"syscall_11": {"sha256": "1d3367e72c8a11371d820bb422bb93012f9539a329565c4d192253e690f48bb5", "syscall": "fstat(3, {st_mode=S_IFREG|0644, st_size=1956992, ...})"}}
+{"syscall_12": {"sha256": "23834bf09fb49582d96af3f8e9ebe9cd329c695a10c76cefe23d80d882e67b0d", "syscall": "mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0)"}}
+{"syscall_13": {"sha256": "ffe9483f766260f3f54ec31d05c6c7fd5fe149d7bfe47ceb8b5c86dbd69496bd", "syscall": "mmap(NULL, 1972224, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0)"}}
+{"syscall_14": {"sha256": "96bb1dc26764a3f40e55e4a6e036a61cfb6ce2510b51fdb3aba158a284b2c5c1", "syscall": "mprotect(MEMORY_ADDR, 1290240, PROT_NONE)"}}
+{"syscall_15": {"sha256": "02416aad82c5a0469477cc4ea7c17b7e48bc0968423a856c873de4276b201027", "syscall": "mmap(MEMORY_ADDR, 987136, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, MEMORY_ADDR)"}}
+{"syscall_16": {"sha256": "2f8fdcd7dd7e45adf003a03abe30e274357466c6406a4a5a5c54cca0072a72f4", "syscall": "mmap(MEMORY_ADDR, 299008, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, MEMORY_ADDR)"}}
+{"syscall_17": {"sha256": "0f1bafe24caa3391bd179008b67fb170a5b58b520275c7be0562934b9fb86867", "syscall": "mmap(MEMORY_ADDR, 57344, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, MEMORY_ADDR)"}}
+{"syscall_18": {"sha256": "e03db475e5f0c87f0271d1a9a8ed632c94b7184f672e2333f256cf2af0801a91", "syscall": "mmap(MEMORY_ADDR, 10240, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0)"}}
+{"syscall_19": {"sha256": "ccabc907837c88bd2c3c0cfbb9f0d4277a6dbbfc95b518491f476ba74dbfa856", "syscall": "close(3)"}}
+{"syscall_20": {"sha256": "d20036b053124a334d0dc0418db55d33247cf57912d6a9fcae6ce78959e1a682", "syscall": "openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libgcc_s.so.1\", O_RDONLY|O_CLOEXEC)"}}
+{"syscall_21": {"sha256": "74ce481179b299043558fda8330490e741de6c7fca9adce74711de981428a143", "syscall": "read(3, \"\\177ELF\\2\\1\\1\\0\\0\\0\\0\\0\\0\\0\\0\\0\\3\\0>\\0\\1\\0\\0\\0\\3405\\0\\0\\0\\0\\0\\0\"..., 832)"}}
+{"syscall_22": {"sha256": "3772eba4fb95b6eeff8a585443ce5cf2170da53c74b986725c75a4bf536fc8f5", "syscall": "fstat(3, {st_mode=S_IFREG|0644, st_size=104984, ...})"}}
+{"syscall_23": {"sha256": "b0eae9595154fbfbc4279e4f4a2d30cc3693ee0b9df6330f5742ce5e9f3014cc", "syscall": "mmap(NULL, 107592, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0)"}}
+{"syscall_24": {"sha256": "1b09f3d67cc5852d1063d10a97f0666f0d84977011652f770a30a4b9e96ce4b9", "syscall": "mmap(MEMORY_ADDR, 73728, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, MEMORY_ADDR)"}}
+{"syscall_25": {"sha256": "3d9a700c435ca131c137fceb927a7181ce4193e0b670fb0272f4006b25f6ca9e", "syscall": "mmap(MEMORY_ADDR, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, MEMORY_ADDR)"}}
+{"syscall_26": {"sha256": "fbeb004e064f8370348b812129bea0575a715cb429699ef2e814f9bc5a7b08e1", "syscall": "mmap(MEMORY_ADDR, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, MEMORY_ADDR)"}}
+{"syscall_27": {"sha256": "ccabc907837c88bd2c3c0cfbb9f0d4277a6dbbfc95b518491f476ba74dbfa856", "syscall": "close(3)"}}
+{"syscall_28": {"sha256": "1d3b7f7aa5178143b213522b44072ca4fc5f4d4a2ff7c2172df7dc37d6374187", "syscall": "openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libc.so.6\", O_RDONLY|O_CLOEXEC)"}}
+{"syscall_29": {"sha256": "18358cfce4b834327c5b1ae93ed27cef281f56eb9f0642508df0981c0fc48e19", "syscall": "read(3, \"\\177ELF\\2\\1\\1\\3\\0\\0\\0\\0\\0\\0\\0\\0\\3\\0>\\0\\1\\0\\0\\0\\360q\\2\\0\\0\\0\\0\\0\"..., 832)"}}
+{"syscall_30": {"sha256": "e5a18556d03fa2f72c99fa1f26330fc624542a623876e87ca75686152bddb434", "syscall": "pread64(3, \"\\6\\0\\0\\0\\4\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0\"..., 784, 64)"}}
+{"syscall_31": {"sha256": "c4546a47652ecd71fd69325fe47f45328b9bf599d3c599a162b5d488da83c66d", "syscall": "pread64(3, \"\\4\\0\\0\\0\\20\\0\\0\\0\\5\\0\\0\\0GNU\\0\\2\\0\\0\\300\\4\\0\\0\\0\\3\\0\\0\\0\\0\\0\\0\\0\", 32, 848)"}}
+{"syscall_32": {"sha256": "8a7a1f0e663a9d5dc8f70d84f498b319491c340d8fbedf8493136916dc386f2b", "syscall": "pread64(3, \"\\4\\0\\0\\0\\24\\0\\0\\0\\3\\0\\0\\0GNU\\0\\t\\233\\222%\\274\\260\\320\\31\\331\\326\\10\\204\\276X>\\263\"..., 68, 880)"}}
+{"syscall_33": {"sha256": "99f0dbaa36c664a4c1ab41ec1ae0b796685f16bcd6aab60c770de950da7d0068", "syscall": "fstat(3, {st_mode=S_IFREG|0755, st_size=2029224, ...})"}}
+{"syscall_34": {"sha256": "e5a18556d03fa2f72c99fa1f26330fc624542a623876e87ca75686152bddb434", "syscall": "pread64(3, \"\\6\\0\\0\\0\\4\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0@\\0\\0\\0\\0\\0\\0\\0\"..., 784, 64)"}}
+{"syscall_35": {"sha256": "c4546a47652ecd71fd69325fe47f45328b9bf599d3c599a162b5d488da83c66d", "syscall": "pread64(3, \"\\4\\0\\0\\0\\20\\0\\0\\0\\5\\0\\0\\0GNU\\0\\2\\0\\0\\300\\4\\0\\0\\0\\3\\0\\0\\0\\0\\0\\0\\0\", 32, 848)"}}
+{"syscall_36": {"sha256": "8a7a1f0e663a9d5dc8f70d84f498b319491c340d8fbedf8493136916dc386f2b", "syscall": "pread64(3, \"\\4\\0\\0\\0\\24\\0\\0\\0\\3\\0\\0\\0GNU\\0\\t\\233\\222%\\274\\260\\320\\31\\331\\326\\10\\204\\276X>\\263\"..., 68, 880)"}}
+{"syscall_37": {"sha256": "6ed0cef802d9d46b24a6653a2fd50941ccf59f2195d4c4d760922f40c8c5ec22", "syscall": "mmap(NULL, 2036952, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0)"}}
+{"syscall_38": {"sha256": "e76e113aa1d34e3760d9b871673e1a4634bc1efaa6f3543f1b392e57d6f58ae2", "syscall": "mprotect(MEMORY_ADDR, 1847296, PROT_NONE)"}}
+{"syscall_39": {"sha256": "e27c8909d1ef319a5f67189c4c277ae98e504bb3f79c980d9f734f19176f5f87", "syscall": "mmap(MEMORY_ADDR, 1540096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, MEMORY_ADDR)"}}
+{"syscall_40": {"sha256": "590332948c34b14c966efd1c8d50d34f98d344506dad2688be63d7c88825be9f", "syscall": "mmap(MEMORY_ADDR, 303104, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, MEMORY_ADDR)"}}
+{"syscall_41": {"sha256": "26f9afdc2149fb2686cfdb5f99ae6b0d61ad29d94b6f46e957405e268232c06c", "syscall": "mmap(MEMORY_ADDR, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, MEMORY_ADDR)"}}
+{"syscall_42": {"sha256": "ed3e592ea2991c4caa63ebc711c87954d5c2fbaf1421b6a7395eb0001187c0c2", "syscall": "mmap(MEMORY_ADDR, 13528, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0)"}}
+{"syscall_43": {"sha256": "ccabc907837c88bd2c3c0cfbb9f0d4277a6dbbfc95b518491f476ba74dbfa856", "syscall": "close(3)"}}
+{"syscall_44": {"sha256": "b00de0a2773f9119f90112389aed0e884d4f8f999f4672c2ace11d22e0058768", "syscall": "openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libm.so.6\", O_RDONLY|O_CLOEXEC)"}}
+{"syscall_45": {"sha256": "1ec4ad69d998703ebdfe8f2a3a656fe15b997b135e819a3ebc213378184606c3", "syscall": "read(3, \"\\177ELF\\2\\1\\1\\3\\0\\0\\0\\0\\0\\0\\0\\0\\3\\0>\\0\\1\\0\\0\\0\\300\\363\\0\\0\\0\\0\\0\\0\"..., 832)"}}
+{"syscall_46": {"sha256": "89dd276130be40a92aa1d9e2b41326cace1dd58140b0de7144d839798879e56a", "syscall": "fstat(3, {st_mode=S_IFREG|0644, st_size=1369352, ...})"}}
+{"syscall_47": {"sha256": "5688cbb254a9afde901a339a78d82eeea51ae12ad717603689d14568b791faeb", "syscall": "mmap(NULL, 1368336, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0)"}}
+{"syscall_48": {"sha256": "add20e7d834eb658862a18d3f71394f268efd19e1c58d4d8cb6824bed63e973d", "syscall": "mmap(MEMORY_ADDR, 684032, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, MEMORY_ADDR)"}}
+{"syscall_49": {"sha256": "c9d26048862461dcefa2c0129a257bcaeea273c833c921b7d54e3a709eaddcd5", "syscall": "mmap(MEMORY_ADDR, 618496, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, MEMORY_ADDR)"}}
+{"syscall_50": {"sha256": "fbeb004e064f8370348b812129bea0575a715cb429699ef2e814f9bc5a7b08e1", "syscall": "mmap(MEMORY_ADDR, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, MEMORY_ADDR)"}}
+{"syscall_51": {"sha256": "ccabc907837c88bd2c3c0cfbb9f0d4277a6dbbfc95b518491f476ba74dbfa856", "syscall": "close(3)"}}
+{"syscall_52": {"sha256": "23834bf09fb49582d96af3f8e9ebe9cd329c695a10c76cefe23d80d882e67b0d", "syscall": "mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0)"}}
+{"syscall_53": {"sha256": "56b6b3cffc8232c4d3d249770ed260c34630aca8ddf1aad219d3442fe0797346", "syscall": "arch_prctl(ARCH_SET_FS, MEMORY_ADDR)"}}
+{"syscall_54": {"sha256": "c03eb1c869940cf60bdec11dbb603de4f4c59e5d5a56901fe7a17df0ba0c8863", "syscall": "mprotect(MEMORY_ADDR, 12288, PROT_READ)"}}
+{"syscall_55": {"sha256": "b5f71d06b4b063febe675afd994b190cd23b5288857ad52636f2243f08de6b52", "syscall": "mprotect(MEMORY_ADDR, 4096, PROT_READ)"}}
+{"syscall_56": {"sha256": "b5f71d06b4b063febe675afd994b190cd23b5288857ad52636f2243f08de6b52", "syscall": "mprotect(MEMORY_ADDR, 4096, PROT_READ)"}}
+{"syscall_57": {"sha256": "23834bf09fb49582d96af3f8e9ebe9cd329c695a10c76cefe23d80d882e67b0d", "syscall": "mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0)"}}
+{"syscall_58": {"sha256": "6d471d5615640dd85a733b3cffa943a049b0491a6137256528444c98b5241ba5", "syscall": "mprotect(MEMORY_ADDR, 45056, PROT_READ)"}}
+{"syscall_59": {"sha256": "b5f71d06b4b063febe675afd994b190cd23b5288857ad52636f2243f08de6b52", "syscall": "mprotect(MEMORY_ADDR, 4096, PROT_READ)"}}
+{"syscall_60": {"sha256": "b5f71d06b4b063febe675afd994b190cd23b5288857ad52636f2243f08de6b52", "syscall": "mprotect(MEMORY_ADDR, 4096, PROT_READ)"}}
+{"syscall_61": {"sha256": "72e4bbbdcc2419f6f6dafe8f35dce8ec011526db7871e4400b5ffbd4558cf95d", "syscall": "munmap(MEMORY_ADDR, 93042)"}}
+{"syscall_62": {"sha256": "195284f654b3eba92e87e938f0ea0f33075b7b7e5dc71121de0d94339ced797f", "syscall": "brk(NULL)"}}
+{"syscall_63": {"sha256": "3b7301e8e55b37bdf379460a99b89ae9aa256355d5d2806bbbd99c98bcf4e1c6", "syscall": "brk(MEMORY_ADDR)"}}
+{"syscall_64": {"sha256": "04523260bd016bb00020d4ce0497f44689024ab36aeecb30fb9462e5a61ffdfd", "syscall": "openat(AT_FDCWD, \"test.txt\", O_WRONLY|O_CREAT|O_TRUNC, 0666)"}}
+{"syscall_65": {"sha256": "73f0aa36010dc7aed3a3dde332fd67210526014b44d1ce8771197cf5f2a514f3", "syscall": "write(3, \"This is a test file created via \"..., 47)"}}
+{"syscall_66": {"sha256": "ccabc907837c88bd2c3c0cfbb9f0d4277a6dbbfc95b518491f476ba74dbfa856", "syscall": "close(3)"}}
+{"syscall_67": {"sha256": "8c22c63875a2b0ce875d859fb022c0ae10cc12c82391aabb504ad2d047a4f371", "syscall": "exit_group(0)"}}
