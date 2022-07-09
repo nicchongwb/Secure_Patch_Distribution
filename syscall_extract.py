@@ -10,6 +10,7 @@ syscall_arr = []
 eval_pattern = re.compile(r"\s=\s.+") # find \s=\s\w+
 mem_pattern = re.compile(r"0x\w+") # find all 0x...
 syscall_pattern = re.compile(r"\w+\(.+\)") # find all syscall
+var_pattern = re.compile(r"\/\*\s\w+\s\w+\s\*\/") # find all \* var...
 
 class Node:
     def __init__(self, left, right, value: str,contnet) -> None:
@@ -41,6 +42,7 @@ def main():
         # Remove all the < = ...> in syscall() = ...
         mod_line = re.sub(eval_pattern, '', line.strip())
         mod_line = re.sub(mem_pattern, mem_placeholder, mod_line.rstrip())
+        mod_line = re.sub(var_pattern, '', mod_line.rstrip())
         if re.match(syscall_pattern, mod_line):
             # hash syscall
             hash = hashlib.sha256(mod_line.encode())
