@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribution Authority Ledger</title>
+    <link rel="stylesheet" href="/enrollments.2cdaf7bc.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Distribution Authority</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html">Distributed Packages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/enrollments.html">Enrollments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/enroll.html">Enroll</a>
+            </li>
+          </ul>
+          <div id="account" class="d-flex"></div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+    <div class="row">
+        <form role="enrollForm">
+        <div class="form-group" style="display: inline">
+            <div class="col-md-9">
+                <label for="vendoerName" class="col-form-label">Vendor Name</label>
+                <input id="vendorName" class="form-control input-lg" name="vendorName">
+                
+                <label for="sha256puv" class="col-form-label">SHA256 of Vendor's Public Key</label>
+                <input id="sha256puv" class="form-control input-lg" name="sha256puv">
+
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary">Enroll</button>
+                </span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/enroll.901cd054.js" defer=""></script>
+  </body>
+</html>
