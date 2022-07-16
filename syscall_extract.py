@@ -146,7 +146,10 @@ def main():
     #Find diff between Vendor OD and Verifier generated OD
     command3 = 'diff %s %s' % (vod_path, ojf_path)
     process3 = subprocess.Popen(command3, stdout=subprocess.PIPE, shell=True)
-    print(process3.communicate())
+    for line in process3.stdout:
+        sys.stdout.write(line)
+        sys.stdout.flush()
+    #print(process3.communicate())
 
 if __name__ == '__main__':
     main()
