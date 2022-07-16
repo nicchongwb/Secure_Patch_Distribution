@@ -43,27 +43,48 @@ er
 ```
 ### OpenSSL
 [Code Signing, Verification with OpenSSL](https://eclipsesource.com/blogs/2016/09/07/tutorial-code-signing-and-verification-with-openssl/)
+[SSL Guide](https://gist.github.com/kyledrake/d7457a46a03d7408da31)
+[Openssl CA Guide](https://blogg.bekk.no/how-to-sign-a-certificate-request-with-openssl-e046c933d3ae)
+[SSL Cert Signing Files](https://stackoverflow.com/questions/9691521/can-ssl-cert-be-used-to-digitally-sign-files)
+
 
 ```bash
-# Creating key pair --> example shows root CA key generation
-openssl genrsa -out rootCAKey.pem 2048 # Generate private key of root CA
-openssl rsa -in rootDAKey.pem -pubout -out rootDAKey.pub # Extract public key from private key
+# Setting up CA
+cd testkeys/PKI/ca
+openssl genrsa -out ca.pem 2048 # Generate private key of CA
+openssl rsa -in ca.pem -pubout -out ca.pub # Get public key from private key
+openssl req -new -x509 -days 10000 -key ca.pem -out ca.crt # Generate CA self sign cert, make sure to key in "DA" for commonName value
 
-# Create self sign root CA - x509 but x509 is used for HTTPS
-openssl req -x509 -sha256 -new -nodes -key rootCAKey.pem -days 3650 -out rootCACert.pem
+# Setting up vendor
+cd testkeys/PKI/vendor_A
+openssl genrsa -out vendorA.pem 2048 # Generate private key of CA
+openssl rsa -in vendorA.pem -pubout -out vendorA.pub # Get public key from private key
+openssl req -new -key vendorA.pem -out vendorA.csr # Generate a CSR
+
+# Get CA to sign Vendor's CSR and generate CSC for vendor
+cd testkeys/PKI
+openssl x509 -sha256 -req -in vendor_A/vendorA.csr -CA ca/ca.crt -CAkey ca/ca.pem -CAcreateserial -out vendorA.crt -days 10000
+openssl verify -CAfile ca/ca.crt vendorA.crt # Verify vendorA.crt using CA's cert
+
+# Vendor Signing Files
+cd testkeys/PKI
+openssl dgst -sha256 -sign vendor_A/vendorA.pem -out vendor_A/test_vendorA.sha256 vendor_A/test_vendorA.txt
+
+# Client/Verifier verifiy signature of file via vendor's CSC
+cd testkeys/PKI
+openssl verify -verbose -CAfile ca/ca.crt vendorA.crt # Verify vendor's CSC using CA's cert
+openssl x509 -in vendorA.crt -pubkey -noout > vendorA_extract.pub # Extract vendor's pub from vendor's CSC
+
+## Use extracted vendor's pub to verify signature of file
+openssl dgst -sha256 -verify vendorA_extract.pub -signature vendor_A/test_vendorA.sha256 vendor_A/test_vendorA.txt
 
 # Review Certificate
-openssl x509 -in rootCACert.pem -text
-
-# Create signature of codeToSign.txt
-openssl dgst -sha256 -sign rootCAKey.pem -out sign.txt.sha256 codeToSign.txt
-
-# Verify signature 
-openssl dgst -sha256 -verify rootDAKey.pub -signature sign.txt.sha256 codeToSign.txt
-
+openssl x509 -in rootDACert.pem -text
 # To get checksum of vendor's public key
 sha256sum <public key> | awk -F " " '{print $1}'
 ```
+
+
 
 ### Start dAPP
 ```bash
