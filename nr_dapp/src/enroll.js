@@ -2,6 +2,7 @@ import Web3 from 'web3';
 import saveAs from 'file-saver';
 import 'bootstrap/dist/css/bootstrap.css';
 import configuration from '../build/contracts/Enrollment.json';
+import axios from 'axios';
 
 // web3 client configuration
 const CONTRACT_ADDRESS = configuration.networks['5777'].address;
@@ -26,19 +27,37 @@ const main = async () => {
     // Enroll Button event listener
     $('form').on('submit', function(event){
         event.preventDefault();
+        let formData = new FormData();
+        formData.append("file", file.files[0]);
+
         var vendorName = $('#vendorName').val();
-        var sha256puv = $('#sha256puv').val();
         console.log(vendorName);
+        var sha256puv = $('#sha256puv').val();
         console.log(sha256puv);
 
         contract.methods.createEnrollment(vendorName, sha256puv, account).send({from: account}).on('transactionHash', function(hash){
           txHash = hash;
           console.log(txHash);
-          
-          // Generate DC_MD and download
-          var filename = vendorName.replace(/ /g, '_') + '_DC.txt';
-          var blob = new Blob([txHash], {type: "application/octet-stream"})
-          saveAs(blob, filename);
+
+          formData.append("vendorName", vendorName);
+          formData.append("txHash", txHash)
+          console.log('FD: ' + formData.get("vendorName"));
+          console.log('FD: ' + formData.get('txHash'));
+
+          const headers = {
+            "Access-Control-Allow-Origin": "http://localhost:5000",
+            "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization",
+            "Content-Type" : "multipart/form-data"
+          };
+
+          axios.post('http://localhost:5000/api/enroll', formData, headers).then(function (response) {
+            console.log(response.data)
+          });
+
+          // // Generate DC_MD and download
+          // var filename = vendorName.replace(/ /g, '_') + '_DC.txt';
+          // var blob = new Blob([txHash], {type: "application/octet-stream"})
+          // saveAs(blob, filename);
         });
 
     })
