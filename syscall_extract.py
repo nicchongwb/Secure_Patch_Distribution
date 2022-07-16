@@ -141,7 +141,10 @@ def main():
     process2 = subprocess.Popen(command2, stdout=subprocess.PIPE, shell=True)
 
     #Vendor Open Declaration
-    vod_path = 'vendor_' + args.file + '_od.json'  # output json file path
+    vod = 'vendor_' + args.file + '_od.json'  # output json file path
+
+    #Omit ./ from path
+    vod_path = vod.replace('./', '')
 
     #Find diff between Vendor OD and Verifier generated OD
     command3 = 'diff %s %s' % (vod_path, ojf_path)
