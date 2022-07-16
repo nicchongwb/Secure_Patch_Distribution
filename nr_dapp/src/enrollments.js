@@ -30,6 +30,7 @@ const createTableElement = () => {
   let col2 = theadRow.insertCell(1);
   let col3 = theadRow.insertCell(2);
   let col4 = theadRow.insertCell(3);
+  let col5 = theadRow.insertCell(4);
   
   col1.innerHTML = "id";
   col1.setAttribute("scope", "col");
@@ -39,6 +40,8 @@ const createTableElement = () => {
   col3.setAttribute("scope", "col");
   col4.innerHTML = "Address";
   col4.setAttribute("scope", "col");
+  col5.innerHTML = "Transaction Hash";
+  col5.setAttribute("scope", "col");
   return tb;
 }
 
@@ -58,12 +61,15 @@ const refreshEnrollments = async () => {
     const enrollment = await contract.methods.enrollments(i+1).call(); //i+1 to go to block created by constructor
     console.log(enrollment);
 
-    // enrollment.id = i;
+    const transactionHash = await web3.eth.getTransactionFromBlock(9, 0);
+    web3.eth.getTransaction().then(console.log);
+
     const erEl = createTableRowElement(`
       <th scope="row">${enrollment.id}</th>
       <td>${enrollment.vendorName}</td>
       <td>${enrollment.puv}</td>
       <td>${enrollment.bpuv}</td>
+      <td>${transactionHash.hash}</td>
     `);
 
     erTbody.appendChild(erEl); // append row to tbody

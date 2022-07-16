@@ -24,6 +24,7 @@
     },
     "dependencies": {
         "bootstrap": "^5.1.3",
+        "file-saver": "^2.0.5",
         "truffle": "^5.5.21",
         "web3": "^1.7.0"
     }

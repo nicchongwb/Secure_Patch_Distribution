@@ -15,8 +15,6 @@ npm install --global --production npm-windows-upgrade
 npm-windows-upgrade --npm-version latest
 ```
 ```bash
-npm i -S bootstrap
-npm i truffle # Install truffle dependency
 cd nr_adapp
 npm install
 ```
@@ -70,6 +68,5 @@ sha256sum <public key> | awk -F " " '{print $1}'
 ### Start dAPP
 ```bash
 cd nr_dapp
-# npm run dev
 npm run start
 ```
