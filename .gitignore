@@ -2,4 +2,4 @@ nr_dapp/node_modules/
 nr_dapp/.parcel-cache
 nr_dapp/venv
 nr_dapp/__pycache__
-nr_dapp/dist
+nr_dapp/dist/**
