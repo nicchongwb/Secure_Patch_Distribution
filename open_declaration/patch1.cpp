@@ -5,7 +5,7 @@ using namespace std;
 
 void createFile() {
 	ofstream MyFile("test.txt");
-	MyFile << "This is a test file created via outfile stream\n";
+	MyFile << "This is a test file\n";
 	MyFile.close();
 }
 
