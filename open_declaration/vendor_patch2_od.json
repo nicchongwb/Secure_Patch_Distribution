@@ -58,7 +58,7 @@
 {"syscall_58": {"syscall": "brk(NULL)", "sha256": "195284f654b3eba92e87e938f0ea0f33075b7b7e5dc71121de0d94339ced797f"}}
 {"syscall_59": {"syscall": "brk(MEMORY_ADDR)", "sha256": "3b7301e8e55b37bdf379460a99b89ae9aa256355d5d2806bbbd99c98bcf4e1c6"}}
 {"syscall_60": {"syscall": "openat(AT_FDCWD, \"test.txt\", O_WRONLY|O_CREAT|O_TRUNC, 0666)", "sha256": "04523260bd016bb00020d4ce0497f44689024ab36aeecb30fb9462e5a61ffdfd"}}
-{"syscall_61": {"syscall": "write(3, \"This is a test files\\n\", 21)", "sha256": "c5c56e405cfa3dbac7b1065e8ba173c658b333dec9730e350f95742f0189ec81"}}
+{"syscall_61": {"syscall": "write(3, \"This is a test file\\n\", 20)", "sha256": "5d2395c286674e96d0e6feb0b8feaa8bbd79386fd6ddf4b61248a5da91bf5909"}}
 {"syscall_62": {"syscall": "close(3)", "sha256": "ccabc907837c88bd2c3c0cfbb9f0d4277a6dbbfc95b518491f476ba74dbfa856"}}
 {"syscall_63": {"syscall": "exit_group(0)", "sha256": "8c22c63875a2b0ce875d859fb022c0ae10cc12c82391aabb504ad2d047a4f371"}}
-: The merkle tree root hash of the 63 syscall hashes is : 079a01923474db34f748ebbbcc9b048e22b832f79c58a61ce591a7546662b890
+: The merkle tree root hash of the 63 syscall hashes is : 9a101c03dd3f6d120beffb031abbd94bb4c6507cd80bda6069d0fcce50cd2c77
