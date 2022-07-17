@@ -9,7 +9,6 @@ cd nr_dapp
 python3 -m venv venv
 . venv/bin/activate
 pip install -r requirements.txt
-FLASK_APP=app.py FLASK_ENV=development flask run # Run Flask in debug mode
 ```
 
 Windows:
@@ -31,6 +30,19 @@ npm install
 
 Note: Add truffle-config.js to Ganache Workspace project settings
 
+### Start APP & MICROSERVICES
+```bash
+# Linux
+. venv/bin/activate
+FLASK_APP=app.py FLASK_ENV=development flask run # Run Flask in debug mode
+
+# CMD
+cd nr_dapp
+npm run start
+```
+
+
+### Truffle
 truffle commands
 ```bash
 cd nr_dapp
@@ -81,28 +93,21 @@ openssl verify -CAfile ca/ca.crt vendorA.crt # Verify vendorA.crt using CA's cer
 # Vendor Signing Files
 cd PKI
 openssl dgst -sha256 -sign vendor_A/vendorA.pem -out vendor_A/test_vendorA.sha256 vendor_A/test_vendorA.txt
+openssl dgst -sha256 -sign vendorA.pem -out patch.sha256.checksum.sig patch.sha256.checksum # Example 2
 
 # CA extract vendor's pub from vendor CSR
 openssl req -in vendor_A/vendorA.csr -pubkey -out vendorAcsr_extract.pub # For enrollment process
 
 # Client/Verifier verifiy signature of file via vendor's CSC
 cd PKI
-openssl verify -verbose -CAfile ca/ca.crt vendorA.crt # Verify vendor's CSC using CA's cert
-openssl x509 -in vendorA.crt -pubkey -noout > vendorA_extract.pub # Extract vendor's pub from vendor's CSC
+openssl verify -verbose -CAfile ca/ca.crt ca/enrollments/crt/vendorA.crt # Verify vendor's CSC using CA's cert
+openssl x509 -in ca/enrollments/crt/vendorA.crt -pubkey -noout > ca/enrollments/pub/vendorA.pub # Extract vendor's pub from vendor's CSC
 
 ## Use extracted vendor's pub to verify signature of file
-openssl dgst -sha256 -verify vendorA_extract.pub -signature vendor_A/test_vendorA.sha256 vendor_A/test_vendorA.txt
-
+openssl dgst -sha256 -verify ca/enrollments/pub/vendorA.pub -signature vendor_A/test_vendorA.sha256 vendor_A/test_vendorA.txt
+ 
 # Review Certificate
 openssl x509 -in vendorA.crt -text
 # To get checksum of vendor's public key
 sha256sum <public key> | awk -F " " '{print $1}'
-```
-
-
-
-### Start dAPP
-```bash
-cd nr_dapp
-npm run start
 ```

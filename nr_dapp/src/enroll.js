@@ -35,7 +35,7 @@ const main = async () => {
         var sha256puv = $('#sha256puv').val();
         console.log(sha256puv);
 
-        contract.methods.createEnrollment(vendorName, sha256puv, account).send({from: account}).on('transactionHash', function(hash){
+        contract.methods.createEnrollment('Vendor:' + vendorName, 'sha256puv:' + sha256puv, account).send({from: account}).on('transactionHash', function(hash){
           txHash = hash;
           console.log(txHash);
 

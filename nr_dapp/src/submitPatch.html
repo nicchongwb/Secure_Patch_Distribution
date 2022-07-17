@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <!-- <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Distributed Packages</a>
+              <a class="nav-link" href="index.html">Distributed Packages</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="enrollments.html">Enrollments</a>
@@ -30,7 +30,7 @@
               <a class="nav-link" href="enroll.html">Enroll</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="submitPatch.html">Submit Patch</a>
+              <a class="nav-link active" aria-current="page" href="submitPatch.html">Submit Patch</a>
             </li>
           </ul>
           <div id="account" class="d-flex"></div>
@@ -39,13 +39,29 @@
     </nav>
 
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div id="enrollments"></div>
-        </div>
+    <div class="row">
+        <form role="enrollForm">
+        <div class="form-group" style="display:inline;">
+            <div class="col-md-9">
+                <label for="patchFile" class="col-form-label">Patch File :</label>
+                <input id="patchFile" class="form-control input-lg" type="file" name="patchFile" />
+
+                <label for="dcv" class="col-form-label">Digital Certificate of Vendor (.crt) :</label>
+                <input id="dcv" class="form-control input-lg" type="file" name="dcv" />
+
+                <label for="sigPatch" class="col-form-label">Signature of H(patch) in (.sig) :</label>
+                <input id="sigPatch" class="form-control input-lg" type="file" name="sigPatch" />
+                <br>
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary">Submit Patch</button>
+                </span>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
 
-    <script type="module" src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="module" src="submitPatch.js"></script>
   </body>
 </html>

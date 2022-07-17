@@ -20,14 +20,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="index.html">Distributed Packages</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="enrollments.html">Enrollments</a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="enroll.html">Enroll</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="submitPatch.html">Submit Patch</a>
             </li>
           </ul>
           <div id="account" class="d-flex"></div>
@@ -43,11 +46,12 @@
                 <label for="vendoerName" class="col-form-label">Vendor Name</label>
                 <input id="vendorName" class="form-control input-lg" name="vendorName"></input>
                 
-                <label for="sha256puv" class="col-form-label">SHA256 of Vendor's Public Key</label>
+                <label for="sha256puv" class="col-form-label">SHA256 of Vendor's Public Key (.pub.sha256)</label>
                 <input id="sha256puv" class="form-control input-lg" name="sha256puv"></input>
 
-                <label for="sha256puv" class="col-form-label">Vendor's CSR</label>
+                <label for="sha256puv" class="col-form-label">Vendor's CSR (.csr)</label>
                 <input id="file" class="form-control input-lg" type="file" name="file" />
+                <br>
                 <span class="input-group-btn">
                     <button type="submit" class="btn btn-primary">Enroll</button>
                 </span>
