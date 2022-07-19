@@ -3,6 +3,8 @@ import saveAs from 'file-saver';
 import 'bootstrap/dist/css/bootstrap.css';
 import configuration from '../build/contracts/Enrollment.json';
 import axios from 'axios';
+import fs from "fs";
+import path from "path";
 
 // web3 client configuration
 const CONTRACT_ADDRESS = configuration.networks['5777'].address;
@@ -30,9 +32,9 @@ const main = async () => {
         let formData = new FormData();
         formData.append("file", file.files[0]);
 
-        var vendorName = $('#vendorName').val();
+        let vendorName = $('#vendorName').val();
         console.log(vendorName);
-        var sha256puv = $('#sha256puv').val();
+        let sha256puv = $('#sha256puv').val();
         console.log(sha256puv);
 
         contract.methods.createEnrollment('Vendor:' + vendorName, 'sha256puv:' + sha256puv, account).send({from: account}).on('transactionHash', function(hash){
@@ -51,13 +53,15 @@ const main = async () => {
           };
 
           axios.post('http://localhost:5000/api/enroll', formData, headers).then(function (response) {
-            console.log(response.data)
+            // console.log(response.data)
+            // Download CRT file path in response
+            console.log(response.data);
+            let filename = response.data + '.path.txt';
+            let relative_fp = 'PKI/ca/enrollments/crt/' + filename;
+            console.log(file);
+            let crt_file = new Blob([relative_fp], {type: "application/octet-stream"})
+            saveAs(crt_file, filename);
           });
-
-          // // Generate DC_MD and download
-          // var filename = vendorName.replace(/ /g, '_') + '_DC.txt';
-          // var blob = new Blob([txHash], {type: "application/octet-stream"})
-          // saveAs(blob, filename);
         });
 
     })
