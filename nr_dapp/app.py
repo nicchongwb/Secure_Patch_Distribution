@@ -1,14 +1,16 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file, send_from_directory
 from flask_cors import CORS, cross_origin
 import os, subprocess
 
 ENROLL_UPLOAD_FOLDER = 'PKI/ca/enrollments/csr'
+CRT_FOLDER = 'PKI/ca/enrollments/crt'
 PATCH_UPLOAD_FOLDER = 'PKI/patches'
 
 
 app = Flask(__name__)
 app.config['ENROLL_UPLOAD_FOLDER'] = ENROLL_UPLOAD_FOLDER
 app.config['PATCH_UPLOAD_FOLDER'] = PATCH_UPLOAD_FOLDER
+app.config['CRT_FOLDER'] = CRT_FOLDER
 CORS(app)
 
 
@@ -30,9 +32,12 @@ def enroll():
         os.putenv("CRT_FILE", crt_filepath)
         os.putenv("PUB_FILE", pub_filepath)
         os.system("bash PKI/generate_csc.sh")
-
-        result = 'CSC Successfully Generated'
-        return result
+        
+        return crt_filepath
+        # try:
+        #         return send_from_directory(app.config['CRT_FOLDER'], mimetype="application/octet-stream", path=crt_filepath, as_attachment=True, attachment_filename=crt_filepath)
+        # except FileNotFoundError:
+        #         os.abort(404)
 
 @app.route("/api/submitPatch", methods=['POST'])
 def submitPatch():
