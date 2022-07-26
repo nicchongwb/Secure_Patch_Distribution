@@ -20,6 +20,11 @@ st_size = re.compile(r"=\d+")  # find all st_size
 file_size = re.compile(r"[0-9]\w+")  # find all file_size
 time_pattern = re.compile(r"\/\*\s\d+\-.+")  # find all \* date time...
 
+
+# class Node:
+#     def __init__(self, left, right, value: str,contnet) -> None:
+#         self.left: Node - left
+
 class MerkelTreeHash(object):
     def __init__(self):
         pass
@@ -120,15 +125,19 @@ def main():
         for line in od_json:
             js = json.loads(line)
             key = list(js.keys())[0]
+            # print(js[key]['sha256'])
             file_hashes.append(js[key]['sha256'])
     od_json.close()
 
+    #print('Finding the merkle tree hash of {0} hashes'.format(len(file_hashes)))
     cls = MerkelTreeHash()
     mk = cls.find_merkel_hash(file_hashes)
     root = 'The merkle tree root hash of the {0} syscall hashes '.format(len(file_hashes)) + 'is : {0}'.format(mk)
+    #print(root)
 
     #Append final root hash to Json
     command2 = 'echo : %s >> %s' % (root, ojf_path)
+    # print('[+] Executing %s ...' % command2)
     process2 = subprocess.Popen(command2, stdout=subprocess.PIPE, shell=True)
 
     #Vendor Open Declaration
@@ -140,9 +149,11 @@ def main():
     #Find diff between Vendor OD and Verifier generated OD
     command3 = 'diff %s %s' % (vod_path, ojf_path)
     process3 = subprocess.Popen(command3, stdout=subprocess.PIPE, shell=True)
-    for line in process3.stdout:
-        sys.stdout.write(line.decode(sys.stdout.encoding))
-        sys.stdout.flush()
+    stdout, stderr = process3.communicate()
+    if stdout:
+        sys.stdout.write(stdout.decode(sys.stdout.encoding))
+    else:
+        print("Merkle root hash and open declaration matched")
 
 if __name__ == '__main__':
     main()
