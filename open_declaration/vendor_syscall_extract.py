@@ -20,11 +20,6 @@ st_size = re.compile(r"=\d+")  # find all st_size
 file_size = re.compile(r"[0-9]\w+")  # find all file_size
 time_pattern = re.compile(r"\/\*\s\d+\-.+")  # find all \* date time...
 
-
-# class Node:
-#     def __init__(self, left, right, value: str,contnet) -> None:
-#         self.left: Node - left
-
 class MerkelTreeHash(object):
     def __init__(self):
         pass
