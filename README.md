@@ -120,3 +120,24 @@ openssl x509 -in vendorA.crt -text
 # To get checksum of vendor's public key
 sha256sum <public key> | awk -F " " '{print $1}'
 ```
+---
+## Framework Design
+### Open-Declaration Process Flow
+![OD-ProcessFlow](https://github.com/nicchongwb/Secure_Patch_Distribution/blob/main/Process%20Flow%20of%20Framework%20-%20Finalized%20OD.png)
+
+
+### Non-Repudaition Protocol Design
+![NR-Protocol](https://github.com/nicchongwb/Secure_Patch_Distribution/blob/main/Process%20Flow%20of%20Framework%20-%20Finalized%20NR.png?raw=true)
+
+
+---
+
+## PoC Demo
+### Open-Declaration Proof-of-Concept
+https://user-images.githubusercontent.com/56181271/182874075-7ea4d752-8a0c-48a9-9af3-d7a289b7d383.mp4
+
+
+
+### Non-Repudiation Proof-of-Concept
+https://user-images.githubusercontent.com/56181271/182873107-dce9e2a0-8396-4827-b8cf-fb57b5735150.mp4
+
