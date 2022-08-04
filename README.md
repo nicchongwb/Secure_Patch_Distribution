@@ -144,7 +144,7 @@ sha256sum <public key> | awk -F " " '{print $1}'
 ![OD-ProcessFlow](https://github.com/nicchongwb/Secure_Patch_Distribution/blob/main/Process%20Flow%20of%20Framework%20-%20Finalized%20OD.png)
 
 
-### Non-Repudaition Protocol Design
+### Non-Repudiation Protocol Design
 ![NR-Protocol](https://github.com/nicchongwb/Secure_Patch_Distribution/blob/main/Process%20Flow%20of%20Framework%20-%20Finalized%20NR.png?raw=true)
 
 
