@@ -1,6 +1,24 @@
 # Secure_Patch_Distribution
+## Preface
+In 2012, Australian intelligence officials had claimed that a software update on Huawei’s network equipment had caused a soph isticated intrusion into
+the country’s telecommunication systems. Huawei had dismissed this claim stating that there is a lack of evidence.
+Between 2019 and 2020, a group of hackers managed to infiltrate SolarWinds' production network and inserted lines of maliciou s codes, that aims to
+create a backdoor, into SolarWinds’ Orion software updates. The hackers then proceed to target a smaller number of organizations, most notably US
+government agencies where confidential information were leaked.
 
-## Open Declaration
+## Project Goals
+This project aims to create a patch distribution framework that are able to do the following:
+ 1. Having a mechanism to ensure non-repudiation of the software patches
+ 2. Having a mechanism/framework that allows software vendors to do an open declaration on the actions in all patches. This de claration can then be
+validated by a third party.
+
+Note: Framework must also ensure and safeguard the rights of the software vendors by ensuring the information/actions declared does not enough to
+cause an attack.
+
+---
+
+## PoC Installation Guide
+### Open Declaration
 ```bash
 g++ patch.cpp -o patch
 ./patch
@@ -8,8 +26,8 @@ g++ patch.cpp -o patch
 strace ./patch 2> patch_strace.txt
 ```
 
-## Non Repudiation
-### Environment Setup
+### Non Repudiation
+#### Environment Setup
 Install Ganache, Node on Host OS
 
 Linux:
@@ -39,7 +57,7 @@ npm install
 
 Note: Add truffle-config.js to Ganache Workspace project settings
 
-### Start APP & MICROSERVICES
+#### Start APP & MICROSERVICES
 ```bash
 # Linux
 . venv/bin/activate
@@ -51,7 +69,7 @@ npm run start
 ```
 
 
-### Truffle
+#### Truffle
 truffle commands
 ```bash
 cd nr_dapp
@@ -72,7 +90,7 @@ enrollmentCount.toNumber()
 er = await enrollment.enrollments(1)
 er
 ```
-### OpenSSL
+#### OpenSSL References
 [Code Signing, Verification with OpenSSL](https://eclipsesource.com/blogs/2016/09/07/tutorial-code-signing-and-verification-with-openssl/)
 [SSL Guide](https://gist.github.com/kyledrake/d7457a46a03d7408da31)
 [Openssl CA Guide](https://blogg.bekk.no/how-to-sign-a-certificate-request-with-openssl-e046c933d3ae)
